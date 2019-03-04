@@ -1,0 +1,24 @@
+/*@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF){
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $start),color-stop(1, $stop));
+	background-image: -moz-linear-gradient(center bottom,$start 0,$stop 100%);
+	background-image: linear-gradient(to top, $start, $stop); // Standard, IE10
+	background-image: -ms-linear-gradient(bottom,$start,$stop);
+	background-image: -o-linear-gradient($stop,$start);
+	//filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",$stop,$start));
+	}*/
+/*
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  @include animation('slide-down 5s 3');
+}
+
+*/
+/*# sourceMappingURL=mixins.css.map */

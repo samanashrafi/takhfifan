@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAs0BA;;;;;;;IAOI;AAiSJ;;;;;;;;;;;;;;EAcE",
+    "sources": [
+        "../../../../repos/universal-app/src/assets/sass/core/mixins.scss",
+        "../../../../repos/universal-app/src/assets/sass/core/variables.scss"
+    ],
+    "names": [],
+    "file": "mixins.css"
+}

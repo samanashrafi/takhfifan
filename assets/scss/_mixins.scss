@@ -1,0 +1,110 @@
+@mixin transition($str) {
+  -webkit-transition: all #{$str};
+  -moz-transition: all #{$str};
+  -ms-transition: all #{$str};
+  -o-transition: all #{$str};
+  transition: all #{$str};
+}
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+@mixin translate($strX, $strY) {
+  -webkit-transform: translate($strX, $strY);
+  -moz-transform: translate($strX, $strY);
+  transform: translate($strX, $strY);
+}
+
+@mixin scale($str) {
+  -webkit-transform: scale($str);
+  -moz-transform: scale($str);
+  transform: scale($str);
+}
+@mixin borderRadius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin bp($point) {
+  $superlarge: "(min-width: 1400px)";
+  $largescreenmin: "(min-width: 1200px)";
+  $largescreenmax: "(max-width: 1200px)";
+  $upper1090: "(min-width: 1090px)";
+  $upper1090max: "(max-width: 1090px)";
+  $desktop: "(min-width: 992px)";
+  $underdesktop: "(max-width: 991px)";
+  $tablet: "(min-width: 768px)";
+  $undertablet: "(max-width: 768px)";
+  $mobile-tablet: "(min-width: 426px) and (max-width: 768px)";
+  $phonelet: "(max-width: 627px)";
+  $uppermobile: "(min-width: 425px)";
+  $mobile: "(max-width: 425px)";
+  $smallmobile: "(max-width: 320px)";
+
+  @if $point == superlarge {
+    @media #{$superlarge} {
+      @content;
+    }
+  } @else if $point == largescreenmin {
+    @media #{$largescreenmin} {
+      @content;
+    }
+  } @else if $point == largescreenmax {
+    @media #{$largescreenmax} {
+      @content;
+    }
+  } @else if $point == upper1090 {
+    @media #{$upper1090} {
+      @content;
+    }
+  } @else if $point == upper1090max {
+    @media #{$upper1090max} {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media #{$desktop} {
+      @content;
+    }
+  } @else if $point == underdesktop {
+    @media #{$underdesktop} {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  } @else if $point == undertablet {
+    @media #{$undertablet} {
+      @content;
+    }
+  } @else if $point == mobile-tablet {
+    @media #{$mobile-tablet} {
+      @content;
+    }
+  } @else if $point == phonelet {
+    @media #{$phonelet} {
+      @content;
+    }
+  } @else if $point == uppermobile {
+    @media #{$uppermobile} {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media #{$mobile} {
+      @content;
+    }
+  } @else if $point == smallmobile {
+    @media #{$smallmobile} {
+      @content;
+    }
+  }
+}

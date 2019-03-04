@@ -1,0 +1,467 @@
+@import "./_rest.scss";
+@import "./_variables.scss";
+@import "./_fonts.scss";
+@import "./_mixins.scss";
+@import "./_btn.scss";
+body {
+  font-family: "Roboto", sans-serif;
+  color: #555;
+  background: #f4f4f4;
+}
+.none {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+  @include transition(0.3s);
+}
+.display-table {
+  display: table;
+  margin: a auto;
+}
+.section-one {
+  position: absolute;
+  background: #f4f4f4;
+  // display: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  @include transition(#{$transition-speed});
+
+  .center-box {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 350px;
+    @include translate(-50%, -50%);
+    .download-box {
+      width: 400px;
+      height: 350px;
+      display: table;
+      margin: auto;
+      padding: 50px;
+      background: #fff;
+      text-align: center;
+
+      @include box-shadow(0 0 57px 10px rgba(155, 155, 155, 0.5));
+      @include borderRadius(50px);
+      h1 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+      }
+      p {
+        color: #777;
+        margin-bottom: 20px;
+        font-size: 0.8em;
+      }
+      @include bp(undertablet) {
+        width: 320px;
+        padding: 35px;
+      }
+      @include bp(mobile) {
+        width: 280px;
+        padding: 25px;
+      }
+    }
+    .market {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 0%;
+      width: 315px;
+      z-index: -1;
+      opacity: 0;
+      @include translate(700px, -50%);
+      @include transition(#{$transition-speed});
+
+      i {
+        font-size: 4em;
+        float: right;
+        color: #9b9b9b;
+        margin-right: 10px;
+        border: 1px solid;
+        @include borderRadius(50px);
+      }
+      @include bp(upper1090max) {
+        i {
+          font-size: 3em;
+          margin: 0 5px;
+        }
+      }
+      @include bp(undertablet) {
+        i {
+          font-size: 2em;
+          margin: 0 5px;
+        }
+      }
+      @include bp(phonelet) {
+        display: table;
+        margin: 20px auto;
+        width: auto;
+        transform: none !important;
+        position: static;
+        opacity: 1;
+        i {
+          font-size: 3em;
+          margin: 0 5px;
+        }
+      }
+      @include bp(mobile) {
+        display: table;
+        margin: 20px auto;
+        width: auto;
+        transform: none !important;
+        position: static;
+        opacity: 1;
+        i {
+          font-size: 2em;
+          margin: 0 5px;
+        }
+      }
+    }
+    .phone-white,
+    .phone-black {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 250px;
+      @include transition(#{$transition-speed});
+      @include bp(phonelet) {
+        display: none;
+      }
+      @include bp(mobile) {
+        display: none;
+      }
+    }
+    .phone-white {
+      z-index: 3;
+      background: url("../img/nexus@2x.png");
+      background-size: cover;
+      margin-top: -81px;
+      height: 520px;
+      z-index: -1;
+      @include translate(-700px, -50%);
+      @include bp(upper1090max) {
+        background: url("../img/nexus.png");
+        background-size: cover;
+        width: 210px;
+        height: 430px;
+        margin-top: -35px;
+      }
+      @include bp(undertablet) {
+        background: url("../img/nexus.png");
+        background-size: cover;
+        width: 170px;
+        height: 353px;
+        margin-top: 0;
+      }
+    }
+    .phone-black {
+      z-index: 2;
+      background: url("../img/iphone@2x.png");
+      background-size: cover;
+      height: 740px;
+      width: 270px;
+      margin-top: -188px;
+
+      @include translate(-850px, -50%);
+
+      @include bp(upper1090max) {
+        background: url("../img/iphone.png");
+        background-size: cover;
+        width: 185px;
+        height: 500px;
+        margin: -70px;
+      }
+      @include bp(undertablet) {
+        background: url("../img/iphone.png");
+        background-size: cover;
+        width: 150px;
+        height: 410px;
+        margin-top: -28px;
+      }
+    }
+  }
+  &.active {
+    .market {
+      opacity: 1;
+      @include translate(130px, -50%);
+      @include bp(upper1090max) {
+        @include translate(70px, -50%);
+      }
+      @include bp(undertablet) {
+        @include translate(-30px, -50%);
+      }
+    }
+    .phone-white {
+      @include translate(-90px, -50%);
+      @include bp(upper1090max) {
+        @include translate(-40px, -50%);
+      }
+      @include bp(undertablet) {
+        @include translate(30px, -50%);
+      }
+    }
+    .phone-black {
+      @include translate(-330px, -50%);
+      @include bp(upper1090max) {
+        @include translate(-130px, -50%);
+      }
+      @include bp(undertablet) {
+        @include translate(-30px, -50%);
+      }
+    }
+  }
+}
+
+.section-two {
+  position: absolute;
+  background: #f4f4f4;
+
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .center-box {
+    position: absolute;
+
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 350px;
+    @include translate(-50%, -50%);
+
+    img {
+      position: relative;
+      top: -128px;
+      display: table;
+      margin: 0 auto;
+      @include bp(undertablet) {
+        width: 78px;
+        margin-bottom: 40px;
+        top: -65px;
+      }
+      @include bp(mobile) {
+        width: 78px;
+        margin-bottom: 40px;
+        top: -65px;
+      }
+    }
+    .download-box {
+      position: relative;
+      top: -128px;
+      width: 400px;
+      display: table;
+      margin: auto;
+      padding: 50px;
+      text-align: center;
+
+      h1 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+        color: #fff;
+        position: relative;
+        top: -50px;
+        opacity: 0;
+        @include transition(4s);
+      }
+    }
+    .drop-position {
+      position: relative;
+      display: table;
+      margin: 0 auto;
+      top: 0px;
+      opacity: 0;
+      @include transition(3s);
+
+      .dropdown-list {
+        width: 250px;
+        float: left;
+        position: relative;
+        margin-right: 14px;
+        text-align: left;
+        .header {
+          display: block;
+          background: #fff;
+          padding: 25px;
+          margin: 7px 0;
+          color: #4b4b4b;
+          font-weight: bold;
+          position: relative;
+          cursor: pointer;
+          @include borderRadius(40px);
+          &::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-right: 3px solid #4b4b4b;
+            border-bottom: 3px solid #4b4b4b;
+            position: absolute;
+            right: 27px;
+            top: 27px;
+            transform: rotate(45deg);
+            @include borderRadius(0 0 4px);
+          }
+        }
+        .list {
+          position: absolute;
+          z-index: 2;
+          background: #fff;
+          display: none;
+
+          padding: 5px;
+          @include borderRadius(10px);
+          li {
+            width: 100%;
+            float: left;
+            padding: 5px;
+            border-bottom: 1px solid #dddddd;
+
+            a {
+              width: 100%;
+              float: left;
+              padding: 7px 14px;
+
+              i {
+                font-size: 2em;
+                float: left;
+
+                color: #9b9b9b;
+                border: 1px solid;
+                @include borderRadius(50px);
+              }
+              span {
+                float: left;
+                margin: 8px 0 0 8px;
+              }
+
+              &:hover {
+                color: $color-primary;
+              }
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+        .active {
+          opacity: 1;
+          visibility: visible;
+          height: auto;
+        }
+        @include bp(undertablet) {
+          width: 100%;
+          float: left;
+          margin-right: 0px;
+        }
+        @include bp(mobile) {
+          width: 100%;
+          float: left;
+          margin-right: 0px;
+        }
+      }
+      @include bp(undertablet) {
+        width: 280px;
+      }
+      @include bp(mobile) {
+        width: 280px;
+      }
+    }
+  }
+
+  .cover-red {
+    position: absolute;
+    z-index: -1;
+    bottom: 82px;
+    left: 350px;
+    width: 2px;
+    height: 2px;
+    background: $color-primary;
+    @include transition(7s);
+    @include borderRadius(100%);
+  }
+
+  .phone-category {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: 0%;
+    background: url("../img/category@2x.png");
+    background-size: cover;
+    width: 145px;
+    height: 450px;
+
+    // border: 1px solid #9b9b9b;
+    @include translate(230px, -50%);
+    @include transition(#{$transition-speed});
+    @include bp(undertablet) {
+      background: url("../img/category.png");
+      background-size: cover;
+      width: 70px;
+      height: 250px;
+    }
+    @include bp(mobile) {
+      display: none;
+    }
+  }
+  .phone-search {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 0%;
+
+    background: url("../img/search@2x.png");
+    background-size: cover;
+    width: 180px;
+    height: 450px;
+    // border: 1px solid #9b9b9b;
+    @include translate(-230px, -50%);
+    @include transition(#{$transition-speed});
+    @include bp(undertablet) {
+      background: url("../img/search.png");
+      background-size: cover;
+      width: 70px;
+      height: 250px;
+    }
+
+    @include bp(mobile) {
+      display: none;
+    }
+  }
+  &.active {
+    z-index: 2;
+    .cover-red {
+      @include scale(100);
+      width: 100px;
+      height: 100px;
+    }
+    .download-box h1 {
+      top: 0;
+      opacity: 1;
+    }
+    .drop-position {
+      top: -120px;
+      opacity: 1;
+      @include bp(undertablet) {
+        top: -180px;
+      }
+      @include bp(mobile) {
+        top: -180px;
+      }
+    }
+    .phone-category {
+      @include translate(0px, -50%);
+    }
+    .phone-search {
+      @include translate(0px, -50%);
+    }
+  }
+}
